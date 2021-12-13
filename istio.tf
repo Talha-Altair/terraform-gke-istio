@@ -46,3 +46,10 @@ resource "helm_release" "istio_egress" {
 
   depends_on = [module.gke-cluster, kubernetes_namespace.istio_system, helm_release.istiod]
 }
+
+resource "kubectl_manifest" "istio_addons" {
+
+  for_each  = toset( ["kiali.yaml","jaeger.yaml","prometheus.yaml","grafana.yaml"] )
+
+  yaml_body = file("${var.istio_location}/samples/addons/${each.key}")
+}
