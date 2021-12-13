@@ -1,0 +1,15 @@
+.terraform
+
+*.hcl
+
+*.tfstate*
+
+*.pem
+
+*.tfvars
+
+creds.json
+
+configmap.yaml
+
+.env
