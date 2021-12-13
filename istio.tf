@@ -46,3 +46,15 @@ resource "helm_release" "istio_egress" {
 
   depends_on = [module.gke-cluster, kubernetes_namespace.istio_system, helm_release.istiod]
 }
+
+resource "helm_release" "istio_addons" {
+  name  = "istio_addons"
+  chart = "./istio-addons-chart"
+
+  timeout         = 120
+  cleanup_on_fail = true
+  force_update    = true
+  namespace       = "istio-system"
+
+  depends_on = [module.gke-cluster, kubernetes_namespace.istio_system, helm_release.istiod]
+}
