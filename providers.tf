@@ -1,12 +1,3 @@
-terraform {
-  required_providers {
-    kubectl = {
-      source  = "gavinbunney/kubectl"
-      version = ">= 1.7.0"
-    }
-  }
-}
-
 provider "google" {
 
   project     = var.project_id
@@ -28,10 +19,4 @@ provider "kubernetes" {
   host                   = "https://${module.gke-cluster.cluster_endpoint}"
   token                  = data.google_client_config.default.access_token
   cluster_ca_certificate = base64decode(module.gke-cluster.ca_cert)
-}
-provider "kubectl" {
-  host                   = "https://${module.gke-cluster.cluster_endpoint}"
-  token                  = data.google_client_config.default.access_token
-  cluster_ca_certificate = base64decode(module.gke-cluster.ca_cert)
-  load_config_file       = false
 }
