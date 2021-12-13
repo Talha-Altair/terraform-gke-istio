@@ -48,7 +48,7 @@ resource "helm_release" "istio_egress" {
 }
 
 resource "helm_release" "istio_addons" {
-  name  = "istio_addons"
+  name  = "istio-addons"
   chart = "./istio-addons-chart"
 
   timeout         = 120
