@@ -32,3 +32,8 @@ variable "node_locations" {
   type = list
   description = "node_locations"
 }
+
+variable "istio_location" {
+  type        = string
+  description = "istio-location"
+}
