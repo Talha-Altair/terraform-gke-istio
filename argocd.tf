@@ -1,6 +1,6 @@
-resource "helm_release" "istio_addons" {
-  name  = "istio_addons"
-  chart = "./istio-addons-chart"
+resource "helm_release" "argocd" {
+  name  = "argocd"
+  chart = "./argo-chart"
 
   timeout         = 120
   cleanup_on_fail = true
