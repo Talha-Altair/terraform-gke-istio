@@ -37,3 +37,8 @@ variable "istio_location" {
   type        = string
   description = "istio-location"
 }
+
+variable "deployment_name" {
+  type = string
+  description = "deployment_name"
+}

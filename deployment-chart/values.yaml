@@ -1,0 +1,11 @@
+deployment_name : "lorem"
+
+service_name : "ipsum"
+
+image :
+
+  uri : "docker.io/library/nginx"
+
+  tag : "latest"
+
+  port: 80
