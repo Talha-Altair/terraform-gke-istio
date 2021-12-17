@@ -42,3 +42,18 @@ variable "deployment_name" {
   type = string
   description = "deployment_name"
 }
+
+variable "cloudbuild_repo_name" {
+  type = string
+  description = "cloudbuild_repo_name"
+}
+
+variable "cloudbuild_repo_branch" {
+  type = string
+  description = "cloudbuild_repo_branch"
+}
+
+variable "cloudbuild_filename" {
+  type = string
+  description = "cloudbuild_filename"
+}
